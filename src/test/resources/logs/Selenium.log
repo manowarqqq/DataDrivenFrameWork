@@ -1,0 +1,5 @@
+16:57:53,279 DEBUG devpinoyLogger:43 - Config file loaded!
+16:57:53,281 DEBUG devpinoyLogger:56 - OR file loaded!
+16:58:02,751 DEBUG devpinoyLogger:67 - Chrome Launched
+16:58:08,870 DEBUG devpinoyLogger:12 - Inside LoginTest
+16:58:10,025 DEBUG devpinoyLogger:91 - Test execution completed

@@ -7,6 +7,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
+import utilities.ExcelReader;
 
 
 import java.io.FileInputStream;
@@ -22,7 +23,8 @@ public static WebDriver driver;
 public static Properties config=new Properties();
 public static Properties OR=new Properties();
 public static FileInputStream fis;
-public static Logger log =Logger.getLogger("devpinoyLogger");
+public static Logger log = Logger.getLogger("devpinoyLogger");
+public  static ExcelReader excel =new ExcelReader(System.getProperty("user.dir")+"\\src\\test\\resources\\excel\\testdata.xls");
 
 
 @BeforeSuite
@@ -31,7 +33,7 @@ if (driver==null) {
 
 
     try {
-        fis = new FileInputStream("D:\\V\\Java\\lessons\\DataDrivenFramework\\src\\test\\resources\\properties\\Config.properties");
+        fis = new FileInputStream(System.getProperty("user.dir")+"\\src\\test\\resources\\properties\\Config.properties");
     } catch (FileNotFoundException e) {
         e.printStackTrace();
     }
@@ -72,7 +74,7 @@ driver.manage().timeouts().implicitlyWait(Integer.parseInt(config.getProperty("i
 
 public boolean isElementPresent(By by) {
     try {
-        driver.findElement();
+        driver.findElement(by);
         return true;
     } catch(NoSuchElementException e) {
 return false;
